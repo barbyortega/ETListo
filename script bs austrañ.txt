@@ -1,0 +1,41 @@
+DROP TABLE AUTOS CASCADE CONSTRAINTS;
+DROP TABLE CLIETNE CASCADE CONSTRAINTS;
+DROP TABLE GENERO CASCADE CONSTRAINTS;
+
+CREATE TABLE AUTOS
+(id_auto  NUMBER(3) NOT NULL,
+ marca VARCHAR2(50),
+ nombre VARCHAR2(50) NOT NULL,
+ annio DATE NOT NULL,
+ color VARCHAR(50),
+ cant_pasajeros NUMBER(10),
+ valor NUMBER(10)
+ CONSTRAINT PK_id_auto PRIMARY KEY(id_auto));
+ 
+CREATE TABLE CLIENTE
+(tur  NUMBER(3) NOT NULL,
+ nombre VARCHAR2(50) NOT NULL,
+ apellido_paterno VARCHAR(50) NOT NULL,
+ apellido_materno VARCHAR(50)
+ fecha_nacimiento DATE NOT NULL,
+ id_genero NUMBER(4),
+ telefono NUMBER(3),
+ email VARCHAR(50)
+ CONSTRAINT PK_rut PRIMARY KEY(rut)); 
+ 
+ CREATE TABLE GENERO
+(id_genero  NUMBER(3) NOT NULL,
+ genero VARCHAR2(40) NOT NULL,
+ CONSTRAINT PK_id_genero PRIMARY KEY(id_genero));  
+ 
+INSERT INTO AUTOS VALUES('10','KIA','RIO 4',EMPTY_BLOB(),'14/08/2020','blanco invierno','5','35000');
+INSERT INTO AUTOS VALUES('11','KIA','SEDONA',EMPTY_BLOB(),'16/06/2019','blanco invierno','7','45000');
+INSERT INTO AUTOS VALUES('12','CHERRY','TIGGO 4',EMPTY_BLOB(),'17/05/2021','blanco invierno','5','45000');
+INSERT INTO AUTOS VALUES('13','TOYOTA','HILUX',EMPTY_BLOB(),'13/04/2020','blanco invierno','5','45000');
+
+INSERT INTO CLIENTE VALUES('10','lando','Norris','Wauman',EMPTY_BLOB(),'13/11/1999','2','97596481','1andonorris4@gmail.com');
+INSERT INTO CLIENTE VALUES('12','Carlos','Sainz','Vasquez',EMPTY_BLOB(),'26/02/1998','2','9456325','carlossainz5@duocuc.cl');
+INSERT INTO CLIENTE VALUES('122','Charles','Leclerc','Herv',EMPTY_BLOB(),'28/05/2000','2','94516256','charleschampion16@gamail.com');
+
+INSERT INTO GENERO VALUES('1','Femenino');
+INSERT INTO GENERO VALUES('2','Masculino');
