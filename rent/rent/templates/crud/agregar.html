@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+</head>
+<body>
+    <h1>Agregar Nuevos Vehículos</h1>
+    <form action="{% url 'agregar' %}" method="post">
+        {% csrf_token %}
+        <pre>id_auto:                        <input type="text" name="id_auto"></pre>
+        <pre>Nombre:                    <input type="text" name="nombre"></pre>
+        <pre>Año:                      <input type="date" name="año"></pre>
+        <pre>Marca:                      <input type="text" name="marca"></pre>
+        <pre>Color:                      <select name="color">
+            {% for g in genero %}
+                <option value="{{ g.id_genero }}">{{ g.genero }}</option>
+            {% endfor %}
+            </select></pre>
+        <input type="submit" name="opcion" value="Agregar">
+    </form>
+    <br><a href="{% url 'admin' %}">Volver a Administración</a>
+
+    <div id="idMensaje">
+        {% if mensaje %}
+            {{ mensaje }}
+        {% endif %}
+    </div>
+</body>
+</html>

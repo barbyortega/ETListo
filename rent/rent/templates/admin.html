@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+<body>
+<header class="container-fluid bg-primary d-flex justify-content-center">
+    <p class="text-light mb-0 p-2 fs-6">Volcán Nevado 1539, 5480000 Puerto Montt, Los Lagos</p>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <span class="fs-5 text-primary fw-bold">Austral Rent a Car</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'vehiculos' %}">Vehículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'instagram' %}">Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registro' %}">Regístrate</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Administración</h2>
+    <form class="container-fluid justify-content-center" method="post" action="{% url 'registrar_admin' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputNombre" name="nombre" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputApellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="inputApellido" name="apellido" required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label for="inputUsuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="inputUsuario" name="usuario" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword" name="contrasena" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Registrar Administrador</button>
+    </form>
+</section>
+
+<footer class="container-fluid bg-dark text-white text-center p-3" id="footer">
+    <p class="mb-0">&copy; 2023 by Austral Rent a Car. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS y Popper.js, ambos requeridos por Bootstrap 5 -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

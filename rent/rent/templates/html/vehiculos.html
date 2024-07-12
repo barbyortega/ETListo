@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Vehículos Disponibles</title>
+</head>
+<body>
+    
+    <header class="container-fluid bg-primary d-flex justify-content-center">
+        <p class="text-light mb-0 p-2 fs-6">Volcán Nevado 1539, 5480000 Puerto Montt, Los Lagos</p>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="fs-5 text-primary fw-bold">Austral Rent a Car</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'vehiculos' %}">Vehículos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ig' %}">Instagram</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registrate' %}">Registrate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Sección de Sedan -->
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/sedan4.jpg' %}" class="card-img-top h-100" alt="Sedan">
+                    <div class="card-body">
+                        <h5 class="card-title">Sedan</h5>
+                        <p class="card-text">Encuentra el sedan perfecto para tu viaje con Austral Rent a Car.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sección de SUV -->
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/suv.jpg' %}" class="card-img-top h-100" alt="SUV">
+                    <div class="card-body">
+                        <h5 class="card-title">SUV</h5>
+                        <p class="card-text">Explora destinos fuera de la carretera con nuestros SUVs.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sección de Minivan -->
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/minivan.jpg' %}" class="card-img-top h-100" alt="Minivan">
+                    <div class="card-body">
+                        <h5 class="card-title">Minivan</h5>
+                        <p class="card-text">Viaja cómodo y con espacio con nuestras minivans en arriendo.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sección de Camioneta -->
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/camioneta.jpeg' %}" class="card-img-top h-100" alt="Camioneta">
+                    <div class="card-body">
+                        <h5 class="card-title">Camioneta</h5>
+                        <p class="card-text">Disfruta de la emoción de la carretera con nuestras camionetas.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repetición de vehículos para llenar espacio -->
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/sedan4.jpg' %}" class="card-img-top h-100" alt="Sedan">
+                    <div class="card-body">
+                        <h5 class="card-title">Sedan</h5>
+                        <p class="card-text">Encuentra el sedan perfecto para tu viaje con Austral Rent a Car.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/suv.jpg' %}" class="card-img-top h-100" alt="SUV">
+                    <div class="card-body">
+                        <h5 class="card-title">SUV</h5>
+                        <p class="card-text">Explora destinos fuera de la carretera con nuestros SUVs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/minivan.jpg' %}" class="card-img-top h-100" alt="Minivan">
+                    <div class="card-body">
+                        <h5 class="card-title">Minivan</h5>
+                        <p class="card-text">Viaja cómodo y con espacio con nuestras minivans en arriendo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100">
+                <div class="card">
+                    <img src="{% static 'imagenes/camioneta.jpeg' %}" class="card-img-top h-100" alt="Camioneta">
+                    <div class="card-body">
+                        <h5 class="card-title">Camioneta</h5>
+                        <p class="card-text">Disfruta de la emoción de la carretera con nuestras camionetas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección adicional con información -->
+    <div class="container my-5">
+        <h2 class="text-center">Más Información</h2>
+        <p class="text-center">Todos nuestros vehículos son revisados y mantenidos regularmente para asegurar la máxima calidad y seguridad en su experiencia de arriendo.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-100 bg-primary text-light py-3">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+            <p class="fs-5 me-3 mb-0">Austral Rent a Car &copy; Todos Los Derechos Reservados 2024</p>
+            <div id="iconos">
+                <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap/JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
